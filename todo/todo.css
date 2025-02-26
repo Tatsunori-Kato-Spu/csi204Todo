@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 10px;
+    background: #f3f3f3;
+    border-radius: 5px;
+}

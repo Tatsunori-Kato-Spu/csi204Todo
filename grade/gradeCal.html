@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+    <link rel="stylesheet" href="grade.css">
+</head>
+<body>
+    <h2>Student Grade Calculator</h2>
+    <table>
+        <tr>
+            <th>Subject Code</th>
+            <th>Score (0-100)</th>
+            <th>Credits</th>
+        </tr>
+        <tr>
+            <td>CSI101</td>
+            <td><input type="number" id="score1" min="0" max="100"></td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CSI102</td>
+            <td><input type="number" id="score2" min="0" max="100"></td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CSI203</td>
+            <td><input type="number" id="score3" min="0" max="100"></td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CSI204</td>
+            <td><input type="number" id="score4" min="0" max="100"></td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>CSI305</td>
+            <td><input type="number" id="score5" min="0" max="100"></td>
+            <td>3</td>
+        </tr>
+    </table>
+    <button onclick="calculateGPA()">Calculate GPA</button>
+    <h3 id="result"></h3>
+    
+    <script src="grade.js"></script>
+</body>
+</html>
