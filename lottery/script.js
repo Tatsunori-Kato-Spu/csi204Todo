@@ -19,9 +19,9 @@ function generateLottery() {
 
     // Display the generated lottery numbers
     const lotteryNumbersDiv = document.getElementById('lotteryNumbers');
-    lotteryNumbersDiv.innerHTML = lotteryNumbers.join(', ');  // Show numbers as a comma-separated list
+    lotteryNumbersDiv.innerHTML = lotteryNumbers.join(', '); 
 
     // Display the guess result
     const guessResultDiv = document.getElementById('guessResult');
-    guessResultDiv.innerHTML = guessResult;  // Show guess result message
+    guessResultDiv.innerHTML = guessResult; 
 }
