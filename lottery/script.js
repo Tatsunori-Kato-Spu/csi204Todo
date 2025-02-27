@@ -3,7 +3,7 @@ function generateLottery() {
     const lotteryNumbers = [];
     
     while (lotteryNumbers.length < numCount) {
-        let randomNum = Math.floor(Math.random() * 49) + 1;
+        let randomNum = Math.floor(Math.random() * 20) + 1;
         if (!lotteryNumbers.includes(randomNum)) {
             lotteryNumbers.push(randomNum);
         }
