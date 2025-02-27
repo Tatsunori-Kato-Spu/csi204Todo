@@ -1,17 +1,67 @@
+/* ปรับพื้นหลังและสีของตัวอักษร */
 body {
     font-family: Arial, sans-serif;
+    background-color: #1a1a1a;  /* สีพื้นหลังดำ */
+    color: #fff;  /* ตัวอักษรสีขาว */
     text-align: center;
-    margin: 50px;
+    padding: 20px;
 }
+
+/* สไตล์สำหรับหัวข้อ */
+h2 {
+    color: #ff4d4d;  /* หัวข้อเป็นสีแดง */
+}
+
+/* ปรับสไตล์ของ input และปุ่ม */
+input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #ff4d4d;  /* ขอบเป็นสีแดง */
+    background-color: #333;  /* พื้นหลังสีเทาเข้ม */
+    color: #fff;  /* ตัวอักษรสีขาว */
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff4d4d;  /* ปุ่มเป็นสีแดง */
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff1a1a;  /* เมื่อเอาเมาส์ไปเหนือปุ่มจะเป็นสีแดงเข้ม */
+}
+
+/* สไตล์ของรายการ To-Do */
 #todo-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
+
 .todo-item {
+    background-color: #333;  /* พื้นหลังของแต่ละงานเป็นสีเทาเข้ม */
+    color: #fff;  /* ตัวอักษรสีขาว */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
-    margin: 5px 0;
-    padding: 10px;
-    background: #f3f3f3;
+    align-items: center;
+}
+
+.todo-item span {
+    color: #ff4d4d;  /* หมายเหตุเป็นสีแดง */
+}
+
+.todo-item button {
+    background-color: #ff4d4d;  /* ปุ่มลบเป็นสีแดง */
     border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.todo-item button:hover {
+    background-color: #ff1a1a;  /* เมื่อเอาเมาส์ไปเหนือปุ่มลบ */
 }
