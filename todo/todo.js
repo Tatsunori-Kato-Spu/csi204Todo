@@ -1,49 +1,56 @@
 document.addEventListener("DOMContentLoaded", loadTasks);
 
-        function addTask() {
-            let taskInput = document.getElementById("task-input");
-            let taskText = taskInput.value.trim();
-            if (taskText === "") return;
+let taskId = 1;  // ตัวแปรที่เก็บหมายเลขงานเริ่มต้นที่ 1
 
-            let taskList = document.getElementById("todo-list");
-            let li = document.createElement("li");
-            li.className = "todo-item";
-            li.innerHTML = `${taskText} <button onclick="removeTask(this)">Remove</button>`;
-            taskList.appendChild(li);
+function loadTasks() {
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let taskList = document.getElementById("todo-list");
+  taskId = tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1;  // คำนวณหมายเลขงานถัดไป
+  tasks.forEach((task) => {
+    let li = document.createElement("li");
+    li.className = "todo-item";
+    li.innerHTML = `${task.id}: <span>${task.note}</span> <button onclick="removeTask(this)">Remove</button>`;
+    taskList.appendChild(li);
+  });
+}
 
-            saveTask(taskText);
-            taskInput.value = "";
-        }
+function addTask() {
+  let taskNote = document.getElementById("task-note");
+  let taskNoteText = taskNote.value.trim();
 
-        function removeTask(button) {
-            let li = button.parentElement;
-            let taskText = li.textContent.replace("Remove", "").trim();
-            li.remove();
-            deleteTask(taskText);
-        }
+  if (taskNoteText === "") return;
 
-        function saveTask(task) {
-            let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-            tasks.push(task);
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-        }
+  let taskList = document.getElementById("todo-list");
+  let li = document.createElement("li");
+  li.className = "todo-item";
+  li.innerHTML = `${taskId}: <span>${taskNoteText}</span> <button onclick="removeTask(this)">Remove</button>`;
+  taskList.appendChild(li);
 
-        function deleteTask(task) {
-            let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-            tasks = tasks.filter(t => t !== task);
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-        }
+  saveTask(taskId, taskNoteText);
+  taskId++;  // เพิ่มหมายเลขงาน
 
-        function loadTasks() {
-            let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-            let taskList = document.getElementById("todo-list");
-            tasks.forEach(task => {
-                let li = document.createElement("li");
-                li.className = "todo-item";
-                li.innerHTML = `${task} <button onclick="removeTask(this)">Remove</button>`;
-                taskList.appendChild(li);
-            });
-        }
+  taskNote.value = "";
+}
+
+function removeTask(button) {
+  let li = button.parentElement;
+  let taskIdToRemove = parseInt(li.innerHTML.split(":")[0].replace("Task", "").trim());
+  li.remove();
+  deleteTask(taskIdToRemove);
+}
+
+function saveTask(id, note) {
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.push({ id: id, note: note });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function deleteTask(id) {
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks = tasks.filter((t) => t.id !== id);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
 
 // เมื่อเอกสารโหลดเสร็จ (DOMContentLoaded)
 
