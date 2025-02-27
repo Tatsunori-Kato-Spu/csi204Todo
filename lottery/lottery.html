@@ -11,9 +11,17 @@
         <h1>Lottery Number Generator</h1>
         <label for="numCount">Enter number of lottery numbers to generate:</label>
         <input type="number" id="numCount" min="1" max="10" value="5">
+        <br>
+        <!-- Input for guessing a number -->
+        <label for="guessNumber">Guess a number (1-100):</label>
+        <input type="number" id="guessNumber" min="1" max="100" placeholder="Enter your guess">
+        
         <button onclick="generateLottery()">Generate</button>
+        
         <h2>Generated Lottery Numbers:</h2>
         <div id="lotteryNumbers"></div>
+        
+        <h2 id="guessResult"></h2> <!-- Display result of guess -->
     </div>
     <script src="script.js"></script>
 </body>

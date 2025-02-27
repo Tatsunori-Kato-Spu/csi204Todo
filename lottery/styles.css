@@ -5,16 +5,17 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f9;
+    background-color: #2c2c2c; /* Dark background */
 }
 
 .container {
     text-align: center;
-    background-color: white;
+    background-color: #3e3e3e; /* Darker container background */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
+    color: white; /* White text */
 }
 
 button {
@@ -22,19 +23,19 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
-    background-color: #4CAF50;
+    background-color: #b83b5e; /* Dark red button */
     color: white;
     border: none;
     border-radius: 5px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #9c3351; /* Slightly darker red on hover */
 }
 
 #lotteryNumbers {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #f5f5f5; /* Light gray text */
 }
